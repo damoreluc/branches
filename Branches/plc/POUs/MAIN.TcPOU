@@ -4,6 +4,7 @@
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
 	autoritenuta1	:	FB_Autoritenuta;
+	autoritenuta2	:	FB_Autoritenuta;
 END_VAR
 ]]></Declaration>
     <Implementation>
