@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1">
-  <POU Name="MAIN" Id="{b76107a0-6f9d-49c7-b708-3794d1af63ed}">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{b76107a0-6f9d-49c7-b708-3794d1af63ed}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
+	autoritenuta1	:	FB_Autoritenuta;
 END_VAR
-]]>
-    </Declaration>
+]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[autoritenuta1(start:= IO.bStart, stop:= IO.bStop , onoff=> IO.bHOn);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
