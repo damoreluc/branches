@@ -12,6 +12,9 @@
 		<Image Id="1" AddrType="9" ImageType="3">
 			<Name>Immagine di processo</Name>
 		</Image>
+		<Box File="Terminale 1 (EK1100).xti" Id="1">
+			<EtherCAT PortABoxInfo="#x00ffffff"/>
+		</Box>
 		<EtherCAT/>
 	</Device>
 </TcSmItem>

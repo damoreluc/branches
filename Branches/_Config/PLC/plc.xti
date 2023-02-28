@@ -1,9 +1,27 @@
 <?xml version="1.0"?>
 <TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.40" ClassName="CNestedPlcProjDef">
 	<Project GUID="{6197B4E2-94B0-42A7-881B-2DEF105D89B0}" Name="plc" PrjFilePath="..\..\plc\plc.plcproj" TmcFilePath="..\..\plc\plc.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="plc\plc.tmc" TmcHash="{D97ECDDD-83E7-F11B-C980-B28ABF4841E6}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="plc\plc.tmc" TmcHash="{B8E6F2DA-84EB-B569-6C82-2F62BD9A16A6}">
 			<Name>plc Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+			<Vars VarGrpType="1">
+				<Name>PlcTask Inputs</Name>
+				<Var>
+					<Name>IO.bStart</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>IO.bStop</Name>
+					<Type>BOOL</Type>
+				</Var>
+			</Vars>
+			<Vars VarGrpType="2" AreaNo="1">
+				<Name>PlcTask Outputs</Name>
+				<Var>
+					<Name>IO.bHOn</Name>
+					<Type>BOOL</Type>
+				</Var>
+			</Vars>
 			<Contexts>
 				<Context>
 					<Id NeedCalleeCall="true">0</Id>
@@ -20,4 +38,15 @@
 			</TaskPouOids>
 		</Instance>
 	</Project>
+	<Mappings>
+		<OwnerA Name="plc Instance">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1100)^Term 2 (EL1809)">
+				<Link VarA="PlcTask Inputs^IO.bStart" VarB="Channel 1^Input" Size="1"/>
+				<Link VarA="PlcTask Inputs^IO.bStop" VarB="Channel 2^Input" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1100)^Term 3 (EL2809)">
+				<Link VarA="PlcTask Outputs^IO.bHOn" VarB="Channel 1^Output" Size="1"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
 </TcSmItem>
